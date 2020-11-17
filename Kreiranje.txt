@@ -1,0 +1,83 @@
+create table pretplatnici
+(
+    id VARCHAR2(15) CONSTRAINT pretplatnici_id_pk PRIMARY KEY,
+    adresa VARCHAR2(30) NOT NULL,
+    telefonski_broj VARCHAR2(15) NOT NULL
+)
+--------------------------------------------------------------------------------------------
+create table producent
+(
+    jmbg VARCHAR2(15) CONSTRAINT producent_jmbg_pk PRIMARY KEY,
+    ime VARCHAR2(20) NOT NULL,
+    prezime VARCHAR2(20) NOT NULL
+)
+--------------------------------------------------------------------------------------------
+create table trupa
+(
+    id VARCHAR2(15) CONSTRAINT trupa_id_pk PRIMARY KEY,
+    naziv VARCHAR2(20) NOT NULL
+)
+--------------------------------------------------------------------------------------------
+create table glumac
+(
+    jmbg VARCHAR2(15) CONSTRAINT glumac_jmbg_pk PRIMARY KEY,
+    ime VARCHAR2(20) NOT NULL,
+    prezime VARCHAR2(20) NOT NULL,
+    datum_rodjenja DATE NOT NULL,
+    id_trupe VARCHAR2(15) NOT NULL,
+    CONSTRAINT glumac_id_trupe_fk FOREIGN KEY(id_trupe) REFERENCES trupa(id)
+)
+---------------------------------------------------------------------------------------------
+create table predstava
+(
+    id VARCHAR2(15) CONSTRAINT predstava_id_pk PRIMARY KEY,
+    datum DATE NOT NULL,
+    br_mesta INTEGER NOT NULL,
+    cena_karte FLOAT NOT NULL,
+    id_trupe VARCHAR2(15) NOT NULL,
+    jmbg_producenta VARCHAR2(15) NOT NULL,
+    CONSTRAINT predstava_id_trupe_fk FOREIGN KEY(id_trupe) REFERENCES trupa(id),
+    CONSTRAINT predstava_jmbg_producenta_fk FOREIGN KEY(jmbg_producenta) REFERENCES producent(jmbg)
+)
+-------------------------------------------------------------------------------------------------
+create table komad
+(
+    id VARCHAR2(15) CONSTRAINT komad_id_pk PRIMARY KEY,
+    naziv VARCHAR2(20) NOT NULL,
+    trajanje_minuti INTEGER NOT NULL,
+    br_cinova INTEGER NOT NULL,
+    kratak_opis VARCHAR2(100) NOT NULL
+)
+-------------------------------------------------------------------------------------------------
+create table rezervacija
+(
+    redni_broj INTEGER CONSTRAINT rezervacija_redni_broj_pk PRIMARY KEY,
+    datum_rezervacije DATE NOT NULL,
+    datum DATE NOT NULL,
+    br_sedista INTEGER NOT NULL,
+    id_komada VARCHAR2(15) NOT NULL,
+    CONSTRAINT rezervacija_id_komada_fk FOREIGN KEY(id_komada) REFERENCES komad(id)
+)
+--------------------------------------------------------------------------------------------------
+create table kartica
+(
+    broj INTEGER CONSTRAINT kartica_broj_pk PRIMARY KEY,
+    datum_vazenja DATE NOT NULL,
+    tip VARCHAR2(20) NOT NULL,
+    kratak_opis VARCHAR2(20) NOT NULL,
+    redni_broj_rezervacije INTEGER NOT NULL,
+    id_pretplatnika VARCHAR2(15) NOT NULL,
+    CONSTRAINT kartica_id_pretplatnika_fk FOREIGN KEY(id_pretplatnika) REFERENCES pretplatnici(id),
+    CONSTRAINT kartica_redni_broj_rezervacije_fk FOREIGN KEY(redni_broj_rezervacije) REFERENCES rezervacija(redni_broj)
+)
+------------------------------------------------------------------------------------------------
+create table vreme_odrzavanja
+(
+    datum DATE NOT NULL,
+    vreme DATE NOT NULL,
+    id_komada VARCHAR2(15) NOT NULL,
+    id_predstave VARCHAR2(15) NOT NULL,
+    CONSTRAINT vreme_odrzavanja_pk PRIMARY KEY(id_komada, id_predstave),
+    CONSTRAINT vreme_odrzavanja_id_komada_fk FOREIGN KEY(id_komada) REFERENCES komad(id),
+    CONSTRAINT vreme_odrzavanja_id_predstave_fk FOREIGN KEY(id_predstave) REFERENCES predstava(id)
+)
