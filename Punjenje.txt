@@ -1,0 +1,116 @@
+insert all
+    into pretplatnici (id, adresa, telefonski_broj) values ('1', 'Kneza Milosa 12, Kragujevac', '+381645842367')
+    into pretplatnici (id, adresa, telefonski_broj) values ('2', 'Daniciceva 23, Kragujevac', '+381600504893')
+    into pretplatnici (id, adresa, telefonski_broj) values ('3', 'Pozeska 13A, Beograd','+381651215169')
+    into pretplatnici (id, adresa, telefonski_broj) values ('4', 'Kosovska 12B, Novi Sad', '+381611298364')
+    into pretplatnici (id, adresa, telefonski_broj) values ('5', 'Karadjordjeva 7, Kragujevac', '+381639842156')
+    into pretplatnici (id, adresa, telefonski_broj) values ('6', 'Kraljevacka 65, Nis', '+381691659787')
+    into pretplatnici (id, adresa, telefonski_broj) values ('7', 'Mostarska 9, Kragujevac', '+381645567821')
+    into pretplatnici (id, adresa, telefonski_broj) values ('8', 'Mostarska 8, Kragujevac', '+381655719863')
+    into pretplatnici (id, adresa, telefonski_broj) values ('9', 'Kosovska 23B , Sombor', '+381619993821')
+    into pretplatnici (id, adresa, telefonski_broj) values ('10', 'Brace Sredojev 1, Kikinda', '+381600987513')
+select * from dual;
+----------------------------------------------------------------------------------------------------------------------
+insert all
+    into komad (id, naziv, trajanje_minuti, br_cinova, kratak_opis) values ('512', 'Igra Sudbine', '240', '3', 'U pitanju je porodicna drama sa puno prepleta, komedije, i ljubavnih prica.')
+    into komad (id, naziv, trajanje_minuti, br_cinova, kratak_opis) values ('267', 'Chicago', '315', '4', 'Prepliću se strast, požuda, ubistva, šou bizsnis i potkupljive sudije.')
+    into komad (id, naziv, trajanje_minuti, br_cinova, kratak_opis) values ('385', 'Cigani lete u nebo','270', '3', 'Najlepše ruske pesme uz koreografiju u ljubavnoj priči ciganke i kradljivca konja.')
+    into komad (id, naziv, trajanje_minuti, br_cinova, kratak_opis) values ('497', 'Mamma Mia', '360', '4', 'Priča o Sofi i njenoj potrazi za identitetom i muzicke grupe Abba.')
+    into komad (id, naziv, trajanje_minuti, br_cinova, kratak_opis) values ('532', 'Pidzama za cetvoro', '180', '2', 'Zasnovana na nizu zabuna pocevsi od jednog nadimka koji je skraćenica od dva imena- Suzan i Suzet.')
+    into komad (id, naziv, trajanje_minuti, br_cinova, kratak_opis) values ('686', 'Glavo Luda', '215', '2', 'Prica o članovima jednog rokenrol benda koji nam donosi duh bezbrižnih osamdesetih.')
+    into komad (id, naziv, trajanje_minuti, br_cinova, kratak_opis) values ('776', 'Zona Zamfirova', '345', '4', 'Na osnovu istinitog događaja koji se odigrao u Prištini krajem 19. veka.')
+    into komad (id, naziv, trajanje_minuti, br_cinova, kratak_opis) values ('891', 'Viktor Viktorija', '345', '4', 'Neobična priča o ženi koja pronalazi posao kao muškarac, što joj potom komplikuje život.')
+    into komad (id, naziv, trajanje_minuti, br_cinova, kratak_opis) values ('903', 'Mister Dolar', '280', '3', 'Specifičnost Nušićevog romana je u tome što će sada biti odigrana  u formi mjuzikla.')
+    into komad (id, naziv, trajanje_minuti, br_cinova, kratak_opis) values ('107', 'Grk Zorba', '270', '2', 'Prema motivima romana Život i vremena Zorbasa.')
+select * from dual;
+--------------------------------------------------------------------------------------------------------------------------
+insert all
+    into rezervacija(redni_broj, datum_rezervacije, datum, br_sedista, id_komada) values ('13', TO_DATE('13/02/2020', 'dd/mm/yyyy'), TO_DATE('14/02/2020', 'dd/mm/yyyy'), '2', '267')
+    into rezervacija(redni_broj, datum_rezervacije, datum, br_sedista, id_komada) values ('108', TO_DATE('11/01/2020', 'dd/mm/yyyy'), TO_DATE('15/01/2020', 'dd/mm/yyyy'), '1', '497')
+    into rezervacija(redni_broj, datum_rezervacije, datum, br_sedista, id_komada) values ('97', TO_DATE('15/04/2020', 'dd/mm/yyyy'), TO_DATE('18/04/2020', 'dd/mm/yyyy'), '4', '903')
+    into rezervacija(redni_broj, datum_rezervacije, datum, br_sedista, id_komada) values ('6', TO_DATE('28/11/2020', 'dd/mm/yyyy'), TO_DATE('30/11/2020', 'dd/mm/yyyy'), '10', '891')
+    into rezervacija(redni_broj, datum_rezervacije, datum, br_sedista, id_komada) values ('57', TO_DATE('22/05/2020', 'dd/mm/yyyy'), TO_DATE('24/05/2020', 'dd/mm/yyyy'), '2', '776')
+    into rezervacija(redni_broj, datum_rezervacije, datum, br_sedista, id_komada) values ('88', TO_DATE('01/04/2020', 'dd/mm/yyyy'), TO_DATE('01/04/2020', 'dd/mm/yyyy'), '2', '686')
+    into rezervacija(redni_broj, datum_rezervacije, datum, br_sedista, id_komada) values ('48', TO_DATE('17/07/2020', 'dd/mm/yyyy'), TO_DATE('20/07/2020', 'dd/mm/yyyy'), '2', '532')
+    into rezervacija(redni_broj, datum_rezervacije, datum, br_sedista, id_komada) values ('73', TO_DATE('30/11/2020', 'dd/mm/yyyy'), TO_DATE('01/12/2020', 'dd/mm/yyyy'), '3', '497')
+    into rezervacija(redni_broj, datum_rezervacije, datum, br_sedista, id_komada) values ('16', TO_DATE('30/06/2020', 'dd/mm/yyyy'), TO_DATE('01/07/2020', 'dd/mm/yyyy'), '4', '512')
+    into rezervacija(redni_broj, datum_rezervacije, datum, br_sedista, id_komada) values ('25', TO_DATE('23/12/2020', 'dd/mm/yyyy'), TO_DATE('25/12/2020', 'dd/mm/yyyy'), '1', '385')
+select * from dual;
+----------------------------------------------------------------------------------------------------------------------------
+insert all
+    into kartica(broj, datum_vazenja, tip, kratak_opis, redni_broj_rezervacije, id_pretplatnika) values ('135968723445', TO_DATE('13/02/2022', 'dd/mm/yyyy'),'mastercard','Koristi se za potrebe korisnika', '108', '4')
+    into kartica(broj, datum_vazenja, tip, kratak_opis, redni_broj_rezervacije, id_pretplatnika) values ('456798772265', TO_DATE('14/08/2025', 'dd/mm/yyyy'),'visa','Koristi se za placanje online', '13', '1')
+    into kartica(broj, datum_vazenja, tip, kratak_opis, redni_broj_rezervacije, id_pretplatnika) values ('876998328733', TO_DATE('23/09/2021', 'dd/mm/yyyy'),'maestro','Koristi se za potrebe korisnika', '97', '10')
+    into kartica(broj, datum_vazenja, tip, kratak_opis, redni_broj_rezervacije, id_pretplatnika) values ('500647873649', TO_DATE('18/04/2023', 'dd/mm/yyyy'),'mastercard','Koristi se za potrebe korisnika', '57', '8')
+    into kartica(broj, datum_vazenja, tip, kratak_opis, redni_broj_rezervacije, id_pretplatnika) values ('364789078909', TO_DATE('21/02/2022', 'dd/mm/yyyy'),'mastercard','Koristi se za potrebe korisnika', '88', '5')
+    into kartica(broj, datum_vazenja, tip, kratak_opis, redni_broj_rezervacije, id_pretplatnika) values ('986370558890', TO_DATE('18/06/2022', 'dd/mm/yyyy'),'visa','Koristi se za potrebe korisnika', '6', '7')
+    into kartica(broj, datum_vazenja, tip, kratak_opis, redni_broj_rezervacije, id_pretplatnika) values ('374689028038', TO_DATE('22/08/2025', 'dd/mm/yyyy'),'visa','Koristi se za placanje online', '48', '9')
+    into kartica(broj, datum_vazenja, tip, kratak_opis, redni_broj_rezervacije, id_pretplatnika) values ('653789920390', TO_DATE('19/06/2021', 'dd/mm/yyyy'),'visa','Koristi se za placanje online', '16', '2')
+    into kartica(broj, datum_vazenja, tip, kratak_opis, redni_broj_rezervacije, id_pretplatnika) values ('234983240239', TO_DATE('17/05/2022', 'dd/mm/yyyy'),'maestro','Koristi se za potrebe korisnika', '73', '3')
+    into kartica(broj, datum_vazenja, tip, kratak_opis, redni_broj_rezervacije, id_pretplatnika) values ('234098239048', TO_DATE('25/04/2023', 'dd/mm/yyyy'),'maestro','Koristi se za potrebe korisnika', '25', '6')
+select * from dual;
+-----------------------------------------------------------------------------------------------------------------------------
+insert all
+    into producent(jmbg,ime, prezime) values ('1309687234450', 'Petar', 'Milojkovic')
+    into producent(jmbg,ime, prezime) values ('9807203900000', 'Lazar', 'Ilic')
+    into producent(jmbg,ime, prezime) values ('0712923334603', 'Jana', 'Markovic')
+    into producent(jmbg,ime, prezime) values ('2308697564092', 'Jelena', 'Zivkovic')
+    into producent(jmbg,ime, prezime) values ('2711745679000', 'Milena', 'Petrovic')
+    into producent(jmbg,ime, prezime) values ('1406892038029', 'Natasa', 'Lenjic')
+    into producent(jmbg,ime, prezime) values ('0909009898273', 'Gojko', 'Pavlovic')
+    into producent(jmbg,ime, prezime) values ('0303003725038', 'Nemanja', 'Alempijevic')
+    into producent(jmbg,ime, prezime) values ('0107749823011', 'Lazar', 'Nikolic')
+    into producent(jmbg,ime, prezime) values ('1809003939202', 'Uros', 'Lukic')
+select * from dual;
+----------------------------------------------------------------------------------------------------------------------------------
+insert all
+    into glumac(jmbg, ime, prezime, datum_rodjenja, id_trupe) values ('1305748378200', 'Marija', 'Jolovic', TO_DATE('13/05/1974', 'dd/mm/yyyy'), '23')
+    into glumac(jmbg, ime, prezime, datum_rodjenja, id_trupe) values ('1708672637362', 'Nikola', 'Lazarevic', TO_DATE('17/08/1967', 'dd/mm/yyyy'), '15')
+    into glumac(jmbg, ime, prezime, datum_rodjenja, id_trupe) values ('2404551290382', 'Mirko', 'Nikolic', TO_DATE('24/04/1955', 'dd/mm/yyyy'), '57')
+    into glumac(jmbg, ime, prezime, datum_rodjenja, id_trupe) values ('0812343280239', 'Ognjen', 'Petrovic', TO_DATE('08/12/1934', 'dd/mm/yyyy'), '18')
+    into glumac(jmbg, ime, prezime, datum_rodjenja, id_trupe) values ('1511592932329', 'Emilija', 'Tankosic', TO_DATE('15/11/1959', 'dd/mm/yyyy'), '72')
+    into glumac(jmbg, ime, prezime, datum_rodjenja, id_trupe) values ('2403828392039', 'Ilija', 'Ratkosic', TO_DATE('24/03/1982', 'dd/mm/yyyy'), '98')
+    into glumac(jmbg, ime, prezime, datum_rodjenja, id_trupe) values ('1809683821223', 'Petar', 'Markovic', TO_DATE('18/09/1968', 'dd/mm/yyyy'), '13')
+    into glumac(jmbg, ime, prezime, datum_rodjenja, id_trupe) values ('0910003482902', 'Veljko', 'Drobnjak', TO_DATE('09/10/2003', 'dd/mm/yyyy'), '61')
+    into glumac(jmbg, ime, prezime, datum_rodjenja, id_trupe) values ('1003003293289', 'Uros', 'Krstanovic', TO_DATE('10/03/2003', 'dd/mm/yyyy'), '37')
+    into glumac(jmbg, ime, prezime, datum_rodjenja, id_trupe) values ('1712002384923', 'Darko', 'Nikolic', TO_DATE('17/12/2002', 'dd/mm/yyyy'), '66')
+select * from dual;
+--------------------------------------------------------------------------------------------------------------------------------------
+insert all
+    into trupa(id, naziv) values ('15','Suncev zalazak')
+    into trupa(id, naziv) values ('23','Kraguj')
+    into trupa(id, naziv) values ('18','Beogradrska trupa')
+    into trupa(id, naziv) values ('57','Terazijski glumci')
+    into trupa(id, naziv) values ('72','Najbolji glumci')
+    into trupa(id, naziv) values ('98','Plavo nebo')
+    into trupa(id, naziv) values ('13','Zvezdani pokrivac')
+    into trupa(id, naziv) values ('61','Zeleni dugmici')
+    into trupa(id, naziv) values ('37','Piramida')
+    into trupa(id, naziv) values ('66','Pravi krugovi')
+select * from dual;
+---------------------------------------------------------------------------------------------------------------------------------------
+insert all
+    into predstava(id, datum, br_mesta, cena_karte, id_trupe, jmbg_producenta) values ('35',TO_DATE('14/12/2020','dd/mm/yyyy'),'103','250','15','9807203900000')
+    into predstava(id, datum, br_mesta, cena_karte, id_trupe, jmbg_producenta) values ('21',TO_DATE('15/12/2020','dd/mm/yyyy'),'65','250','18','2308697564092')
+    into predstava(id, datum, br_mesta, cena_karte, id_trupe, jmbg_producenta) values ('77',TO_DATE('23/12/2020','dd/mm/yyyy'),'97','600','72','0909009898273')
+    into predstava(id, datum, br_mesta, cena_karte, id_trupe, jmbg_producenta) values ('56',TO_DATE('27/12/2020','dd/mm/yyyy'),'53','300','98','1809003939202')
+    into predstava(id, datum, br_mesta, cena_karte, id_trupe, jmbg_producenta) values ('43',TO_DATE('26/02/2022','dd/mm/yyyy'),'143','150','13','1309687234450')
+    into predstava(id, datum, br_mesta, cena_karte, id_trupe, jmbg_producenta) values ('11',TO_DATE('03/03/2021','dd/mm/yyyy'),'215','200','37','0303003725038')
+    into predstava(id, datum, br_mesta, cena_karte, id_trupe, jmbg_producenta) values ('12',TO_DATE('28/04/2021','dd/mm/yyyy'),'110','400','23','2711745679000')
+    into predstava(id, datum, br_mesta, cena_karte, id_trupe, jmbg_producenta) values ('78',TO_DATE('09/01/2022','dd/mm/yyyy'),'214','400','57','0712923334603')
+    into predstava(id, datum, br_mesta, cena_karte, id_trupe, jmbg_producenta) values ('82',TO_DATE('07/08/2022','dd/mm/yyyy'),'245','500','66','1406892038029')
+    into predstava(id, datum, br_mesta, cena_karte, id_trupe, jmbg_producenta) values ('16',TO_DATE('19/05/2022','dd/mm/yyyy'),'290','300','61','0107749823011')
+select * from dual;
+----------------------------------------------------------------------------------------------------------------------------------------
+insert all
+    into vreme_odrzavanja(id_komada, id_predstave, datum, vreme) values ( '512', '35', TO_DATE('14/12/2020','dd/mm/yyyy'), TO_TIMESTAMP('14/12/2020 15:30:00', 'dd/mm/yyyy HH24:MI:SS'))
+    into vreme_odrzavanja(id_komada, id_predstave, datum, vreme) values ('267', '21', TO_DATE('15/12/2020','dd/mm/yyyy'), TO_TIMESTAMP('15/12/2020 18:30:00', 'dd/mm/yyyy HH24:MI:SS'))
+    into vreme_odrzavanja(id_komada, id_predstave, datum, vreme) values ('385', '77',TO_DATE('23/12/2020','dd/mm/yyyy'), TO_TIMESTAMP('23/12/2020 20:00:00', 'dd/mm/yyyy HH24:MI:SS'))
+    into vreme_odrzavanja(id_komada, id_predstave, datum, vreme) values ('497', '56',TO_DATE('27/12/2020','dd/mm/yyyy'), TO_TIMESTAMP('27/12/2020 19:00:00', 'dd/mm/yyyy HH24:MI:SS'))
+    into vreme_odrzavanja(id_komada, id_predstave, datum, vreme) values ('532', '43',TO_DATE('26/02/2022','dd/mm/yyyy'), TO_TIMESTAMP('26/02/2022 18:00:00', 'dd/mm/yyyy HH24:MI:SS'))
+    into vreme_odrzavanja(id_komada, id_predstave, datum, vreme) values ('686', '11', TO_DATE('03/03/2021','dd/mm/yyyy'), TO_TIMESTAMP('03/03/2021 19:00:00', 'dd/mm/yyyy HH24:MI:SS'))
+    into vreme_odrzavanja(id_komada, id_predstave, datum, vreme) values ('776', '12', TO_DATE('28/04/2021','dd/mm/yyyy'), TO_TIMESTAMP('28/04/2021 19:30:00', 'dd/mm/yyyy HH24:MI:SS'))
+    into vreme_odrzavanja(id_komada, id_predstave, datum, vreme) values ('891', '78', TO_DATE('09/01/2022','dd/mm/yyyy'), TO_TIMESTAMP('09/01/2022 18:00:00', 'dd/mm/yyyy HH24:MI:SS'))
+    into vreme_odrzavanja(id_komada, id_predstave, datum, vreme) values ('903', '82', TO_DATE('07/08/2022','dd/mm/yyyy'), TO_TIMESTAMP('07/08/2022 19:30:00', 'dd/mm/yyyy HH24:MI:SS'))
+    into vreme_odrzavanja(id_komada, id_predstave, datum, vreme) values ('107','16',TO_DATE('19/05/2022','dd/mm/yyyy'), TO_TIMESTAMP('19/05/2022 20:00:00', 'dd/mm/yyyy HH24:MI:SS'))
+select * from dual;

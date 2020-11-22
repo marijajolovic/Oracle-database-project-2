@@ -64,7 +64,7 @@ create table kartica
     broj INTEGER CONSTRAINT kartica_broj_pk PRIMARY KEY,
     datum_vazenja DATE NOT NULL,
     tip VARCHAR2(20) NOT NULL,
-    kratak_opis VARCHAR2(20) NOT NULL,
+    kratak_opis VARCHAR2(50) NOT NULL,
     redni_broj_rezervacije INTEGER NOT NULL,
     id_pretplatnika VARCHAR2(15) NOT NULL,
     CONSTRAINT kartica_id_pretplatnika_fk FOREIGN KEY(id_pretplatnika) REFERENCES pretplatnici(id),
@@ -74,10 +74,11 @@ create table kartica
 create table vreme_odrzavanja
 (
     datum DATE NOT NULL,
-    vreme DATE NOT NULL,
+    vreme TIMESTAMP NOT NULL,
     id_komada VARCHAR2(15) NOT NULL,
     id_predstave VARCHAR2(15) NOT NULL,
     CONSTRAINT vreme_odrzavanja_pk PRIMARY KEY(id_komada, id_predstave),
     CONSTRAINT vreme_odrzavanja_id_komada_fk FOREIGN KEY(id_komada) REFERENCES komad(id),
     CONSTRAINT vreme_odrzavanja_id_predstave_fk FOREIGN KEY(id_predstave) REFERENCES predstava(id)
 )
+-----------------------------------------------------------------------------------------------------
